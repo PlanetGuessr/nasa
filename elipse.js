@@ -2,7 +2,7 @@ AFRAME.registerComponent('ellipse-contour-geometry', {
   schema: {
     xRadius: { type: 'number', default: 10 }, // Horizontal radius (semi-major axis)
     eccentricity: { type: 'number', default: 0 }, // Eccentricity of the ellipse (0 to <1)
-    segments: { type: 'int', default: 64 }, // Number of segments for smoothness
+    segments: { type: 'int', default: 128 }, // Number of segments for smoothness
   },
   init: function () {
     var data = this.data
