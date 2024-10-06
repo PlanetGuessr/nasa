@@ -6,6 +6,7 @@ AFRAME.registerComponent('ellipse-contour-geometry', {
     schema: {
       xRadius: { type: 'number', default: 10 }, // Horizontal sunDistance (semi-major axis)
       eccentricity: { type: 'number', default: 0 }, // Eccentricity of the ellipse (0 to <1)
+      inclination: { type: 'number', default: 0 }, // Inclination of the ellipse
       segments: { type: 'int', default: 128 }, // Number of segments for smoothness
     },
     init: function () {
@@ -37,11 +38,11 @@ AFRAME.registerComponent('ellipse-contour-geometry', {
   });
 
 
-export const Planet: React.FC<IPlanet> = ({id, name, eccentricity, speed, sunDistance, size}) => {
+const Planet: React.FC<IPlanet> = ({id, name, eccentricity, inclination, speed, sunDistance, size}) => {
 
     const planet = useRef<HTMLElement | null>(null);
 
-    function moveElementInEllipse(element: any, a: number, eccentricity: number,
+    function moveElementInEllipse(element: any, a: number, eccentricity: number, inclination: number,
         cX: number, cZ: number, speed: number) {
         let t = 0; // time variable
       
@@ -67,7 +68,7 @@ export const Planet: React.FC<IPlanet> = ({id, name, eccentricity, speed, sunDis
 
     useEffect(() => {
         if(planet.current){
-            moveElementInEllipse(planet.current, sunDistance, 0, eccentricity, 0, speed + 0.001)
+            moveElementInEllipse(planet.current, sunDistance, 0, eccentricity, inclination, 0, speed + 0.001)
         }
     }, [])
  
@@ -76,9 +77,10 @@ export const Planet: React.FC<IPlanet> = ({id, name, eccentricity, speed, sunDis
         <>
             <a-entity
                 id={`${name}-orbit`}
-                ellipse-contour-geometry={`xRadius: ${sunDistance};`}
+                ellipse-contour-geometry={`eccentricity: ${eccentricity}; xRadius: ${sunDistance};`}
                 position="0 0 0"
-                rotation="90 0 0"></a-entity>
+                rotation={`${inclination+90} 0 0`}
+				></a-entity>
             <a-entity id={`${name}-container`} ref={planet} position="6 0 0" rotation="0 0 -23.5">
                 <a-text position="-1 1.3 0" color="white" value={name}></a-text>
                 <a-text

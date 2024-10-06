@@ -12,7 +12,7 @@ export default function Home() {
       <a-scene
         device-orientation-permission-ui="enabled: false"
         background="color: black">
-        <a-entity camera look-controls wasd-controls position="0 10 150">
+        <a-entity camera look-controls wasd-controls="acceleration:250; fly:true" position="0 10 150">
         </a-entity>
         <SolarSystem />
       </a-scene>
