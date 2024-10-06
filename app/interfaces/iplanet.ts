@@ -4,6 +4,7 @@ export default interface IPlanet{
     eccentricity: number; 
     inclination: number; 
 	rotation: number;
+	rot_speed: number;
     speed: number;
     sunDistance: number;
     size: number;

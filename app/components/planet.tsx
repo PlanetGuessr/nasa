@@ -38,7 +38,7 @@ AFRAME.registerComponent('ellipse-contour-geometry', {
   });
 
 
-const Planet: React.FC<IPlanet> = ({id, name, eccentricity, inclination, rotation, speed, sunDistance, size}) => {
+const Planet: React.FC<IPlanet> = ({id, name, eccentricity, inclination, rotation, rot_speed, speed, sunDistance, size}) => {
 
     const planet = useRef<HTMLElement | null>(null);
 
@@ -89,7 +89,7 @@ const Planet: React.FC<IPlanet> = ({id, name, eccentricity, inclination, rotatio
                     value={name}
                     rotation="0 180 0"></a-text>
                 <a-entity
-                    animation="property:rotation; dur:10000; easing:linear; to:0 360 0; loop:true;">
+                    animation={`property:rotation; dur:${rot_speed}; easing:linear; to:0 360 0; loop:true;`}>
                     <a-sphere id={name} material={`src:/textures/${name.toLowerCase()}.jpg`} radius={size}>
                         {/* <a-cylinder
                             id="earth-pincho"
