@@ -4,7 +4,7 @@ import 'aframe';
 
 AFRAME.registerComponent('ellipse-contour-geometry', {
     schema: {
-      xRadius: { type: 'number', default: 10 }, // Horizontal radius (semi-major axis)
+      xRadius: { type: 'number', default: 10 }, // Horizontal sunDistance (semi-major axis)
       eccentricity: { type: 'number', default: 0 }, // Eccentricity of the ellipse (0 to <1)
       segments: { type: 'int', default: 128 }, // Number of segments for smoothness
     },
@@ -37,7 +37,7 @@ AFRAME.registerComponent('ellipse-contour-geometry', {
   });
 
 
-export const Planet: React.FC<IPlanet> = ({id, name, eccentricity, speed, radius}) => {
+export const Planet: React.FC<IPlanet> = ({id, name, eccentricity, speed, sunDistance, size}) => {
 
     const planet = useRef<HTMLElement | null>(null);
 
@@ -67,7 +67,7 @@ export const Planet: React.FC<IPlanet> = ({id, name, eccentricity, speed, radius
 
     useEffect(() => {
         if(planet.current){
-            moveElementInEllipse(planet.current, radius, 0, eccentricity, 0, speed + 0.001)
+            moveElementInEllipse(planet.current, sunDistance, 0, eccentricity, 0, speed + 0.001)
         }
     }, [])
  
@@ -76,7 +76,7 @@ export const Planet: React.FC<IPlanet> = ({id, name, eccentricity, speed, radius
         <>
             <a-entity
                 id={`${name}-orbit`}
-                ellipse-contour-geometry={`xRadius: ${radius};`}
+                ellipse-contour-geometry={`xRadius: ${sunDistance};`}
                 position="0 0 0"
                 rotation="90 0 0"></a-entity>
             <a-entity id={`${name}-container`} ref={planet} position="6 0 0" rotation="0 0 -23.5">
@@ -88,11 +88,11 @@ export const Planet: React.FC<IPlanet> = ({id, name, eccentricity, speed, radius
                     rotation="0 180 0"></a-text>
                 <a-entity
                     animation="property:rotation; dur:10000; easing:linear; to:0 360 0; loop:true;">
-                    <a-sphere id={name} material={`src:/textures/${name.toLowerCase()}.jpg`} radius="1.25">
+                    <a-sphere id={name} material={`src:/textures/${name.toLowerCase()}.jpg`} radius={size}>
                         {/* <a-cylinder
                             id="earth-pincho"
                             position="0 0 0"
-                            radius="0.05"
+                            sunDistance="0.05"
                             height="8"
                             color="#FFC65D">
                         </a-cylinder> */}

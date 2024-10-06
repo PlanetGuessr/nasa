@@ -5,6 +5,8 @@ declare namespace JSX {
       'a-text': any;
       'a-sphere': any;
       'a-cylinder': any;
+      'a-assets': any;
+      'a-sky': any;
       // Add other A-Frame elements as needed
     }
   }

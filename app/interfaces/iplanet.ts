@@ -3,5 +3,6 @@ export default interface IPlanet{
     name: string;
     eccentricity: number; 
     speed: number;
-    radius: number;
+    sunDistance: number;
+    size: number;
 }

@@ -5,11 +5,14 @@ import Planet from "./planet";
 export default function SolarSystem() {
 
     const planets: IPlanet[] = [
-        {id: 1, name: "Mercury", eccentricity: 0, speed: 0.0009, radius: 15},
-        {id: 2, name: "Venus", eccentricity: 0, speed: 0.0002, radius: 25},
-        {id: 3, name: "Earth", eccentricity: 0.5, speed: 0, radius: 40},
-        {id: 4, name: "Mars", eccentricity: 0.5, speed: 0, radius: 55}
-
+        {id: 1, name: "Mercury", eccentricity: 0, speed: 0.0009, sunDistance: 15, size:1},
+        {id: 2, name: "Venus", eccentricity: 0, speed: 0.0002, sunDistance: 25, size:2 },
+        {id: 3, name: "Earth", eccentricity: 0.5, speed: 0, sunDistance: 40, size:2 },
+        {id: 4, name: "Mars", eccentricity: 0.5, speed: 0, sunDistance: 55, size:1 },
+        {id: 5, name: "Jupiter", eccentricity: 0.5, speed: 0, sunDistance: 80, size:5 },
+        {id: 6, name: "Saturn", eccentricity: 0.5, speed: 0, sunDistance: 100, size:3.5 },
+        {id: 7, name: "Uranus", eccentricity: 0.5, speed: 0, sunDistance: 120, size:2.5 },
+        {id: 8, name: "Neptune", eccentricity: 0.5, speed: 0, sunDistance: 140, size:2.5 },
     ]
 
     return (
@@ -26,8 +29,9 @@ export default function SolarSystem() {
                 {
                     planets.map((planet, index) => (
                         <Planet id={planet.id} name={planet.name} 
-                        radius={planet.radius} key={index}
-                        eccentricity={planet.eccentricity} speed={planet.speed}/>
+                        sunDistance={planet.sunDistance} key={index}
+                        eccentricity={planet.eccentricity} speed={planet.speed}
+                        size={planet.size}/>
                     ))
                 }
             </a-entity>
