@@ -13,7 +13,8 @@ const Hud = () => {
         setHudOptions({ ...hudOptions, orbitScale: Number(ev.target.value)});
     }
 
-    return (
+    return 
+	{/*
         <div className="bg-gray-800 rounded-md border-gray-600 border
          w-44 h-50 absolute flex flex-col top-2 left-2 z-50 text-white justify-center items-center">
             <div>
@@ -27,7 +28,8 @@ const Hud = () => {
                 min={1} max={10} className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700" />
             </div>
         </div>
-    )
+	*/}
+    
 }
 
 export default Hud;
