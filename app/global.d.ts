@@ -7,6 +7,7 @@ declare namespace JSX {
       'a-cylinder': any;
       'a-assets': any;
       'a-sky': any;
+      'dynamicComponent': any;
       // Add other A-Frame elements as needed
     }
   }

@@ -1,5 +1,4 @@
 import { useContext, useEffect, useRef } from "react"
-import hudContext from "../context/hud-context";
 import IPlanet from "../interfaces/iplanet";
 import 'aframe';
 
@@ -41,7 +40,6 @@ AFRAME.registerComponent('ellipse-contour-geometry', {
 
 const Planet: React.FC<IPlanet> = ({id, name, eccentricity, inclination, rotation, rot_speed, speed, sunDistance, size}) => {
 
-    const { hudOptions, setHudOptions } = useContext(hudContext);
 
     const planet = useRef<HTMLElement | null>(null);
 
@@ -73,7 +71,7 @@ const Planet: React.FC<IPlanet> = ({id, name, eccentricity, inclination, rotatio
         if(planet.current){
             moveElementInEllipse(planet.current, sunDistance, eccentricity, inclination, 0, 0, speed + 0.001)
         }
-    }, [hudOptions])
+    }, )
  
 
     return (
