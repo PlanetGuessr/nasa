@@ -51,7 +51,7 @@ const Planet: React.FC<IPlanet> = ({id, name, eccentricity, inclination, rotatio
       
         // Calculate the semi-minor axis (b) based on the eccentricity
         let b = a * Math.sqrt(1 - Math.pow(eccentricity, 2));
-      
+
         setInterval(() => {
           // Compute the position in 3D space (ellipse on x and z axes)
           let x = a * Math.cos(t) + cX;
@@ -71,7 +71,7 @@ const Planet: React.FC<IPlanet> = ({id, name, eccentricity, inclination, rotatio
 
     useEffect(() => {
         if(planet.current){
-            moveElementInEllipse(planet.current, sunDistance, 0, eccentricity, inclination, 0, speed + 0.001)
+            moveElementInEllipse(planet.current, sunDistance, eccentricity, inclination, 0, 0, speed + 0.001)
         }
     }, [hudOptions])
  

@@ -37,7 +37,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <Script src="/elipse.js" strategy="beforeInteractive" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

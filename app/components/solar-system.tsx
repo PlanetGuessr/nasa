@@ -13,13 +13,13 @@ const SolarSystem = () => {
     }, [hudOptions])
 
     const planets: IPlanet[] = [
-        {id: 1, name: "Mercury", eccentricity: 0.20563661, inclination: 0 /*7.00559432*/, rotation: 0, rot_speed: 700000, speed: 0.0009, sunDistance: 25, size:1 },
-        {id: 2, name: "Venus", eccentricity: 0.00676399, inclination: 0 /*3.39777545*/, rotation: 177.4, rot_speed: 1400000, speed: 0.0002, sunDistance: 40, size:2 },
-        {id: 3, name: "Earth", eccentricity: 0.01673163, inclination: 0 /*-0.00054346*/, rotation: 23.4, rot_speed: 175000, speed: 0.0001, sunDistance: 55, size:2 },
-        {id: 4, name: "Mars", eccentricity: 0.09336511, inclination: 0 /*1.85181869*/, rotation: 25.2, rot_speed: 350000, speed: 0.0001, sunDistance: 75, size:1 },
-        {id: 5, name: "Jupiter", eccentricity: 0.04853590, inclination: 0 /*1.29861416*/, rotation: 3.1, rot_speed: 10000, speed: 0.0001, sunDistance: 100, size:5 },
-        {id: 6, name: "Saturn", eccentricity: 0.05550825, inclination: 0 /*2.49424102*/, rotation: 26.7, rot_speed: 12500, speed: 0.0001, sunDistance: 120, size:3.5 },
-        {id: 7, name: "Uranus", eccentricity: 0.04685740, inclination: 0 /*0.77298127*/, rotation: 97.8, rot_speed: 21875, speed: 0.0001 , sunDistance: 140, size:2.5 },
+        {id: 1, name: "Mercury", eccentricity: 0.20563661, inclination: 0 /*7.00559432*/, rotation: 0, rot_speed: 700000, speed: 0.0016, sunDistance: 25, size:1 },
+        {id: 2, name: "Venus", eccentricity: 0.00676399, inclination: 0 /*3.39777545*/, rotation: 177.4, rot_speed: 1400000, speed: 0.0014, sunDistance: 40, size:2 },
+        {id: 3, name: "Earth", eccentricity: 0.01673163, inclination: 0 /*-0.00054346*/, rotation: 23.4, rot_speed: 175000, speed: 0.0012, sunDistance: 55, size:2 },
+        {id: 4, name: "Mars", eccentricity: 0.09336511, inclination: 0 /*1.85181869*/, rotation: 25.2, rot_speed: 350000, speed: 0.0010, sunDistance: 75, size:1 },
+        {id: 5, name: "Jupiter", eccentricity: 0.04853590, inclination: 0 /*1.29861416*/, rotation: 3.1, rot_speed: 10000, speed: 0.0008, sunDistance: 100, size:5 },
+        {id: 6, name: "Saturn", eccentricity: 0.05550825, inclination: 0 /*2.49424102*/, rotation: 26.7, rot_speed: 12500, speed: 0.0006, sunDistance: 120, size:3.5 },
+        {id: 7, name: "Uranus", eccentricity: 0.04685740, inclination: 0 /*0.77298127*/, rotation: 97.8, rot_speed: 21875, speed: 0.0004 , sunDistance: 140, size:2.5 },
         {id: 8, name: "Neptune", eccentricity: 0.04685740, inclination: 0 /*1.77005520*/, rotation: 28.3, rot_speed: 43750, speed: 0.0001, sunDistance: 160, size:2.5 },
     ]
 
