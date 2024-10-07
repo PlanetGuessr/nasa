@@ -91,7 +91,7 @@ const Planet: React.FC<IPlanet> = ({id, name, eccentricity, inclination, rotatio
                     rotation="0 180 0"></a-text>
                 <a-entity
                     animation={`property:rotation; dur:${rot_speed}; easing:linear; to:0 360 0; loop:true;`}>
-                    <a-sphere id={name} material={`src:/docs/assets/${name.toLowerCase()}.jpg`} radius={size}>
+                    <a-sphere id={name} material={`src:textures/${name.toLowerCase()}.jpg`} radius={size}>
                         {/* <a-cylinder
                             id="earth-pincho"
                             position="0 0 0"

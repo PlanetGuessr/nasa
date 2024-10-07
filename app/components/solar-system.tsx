@@ -29,7 +29,7 @@ const SolarSystem = () => {
                 <a-sphere
                     animation="property:rotation; dur:2160000000; easing:linear; to:0 360 0; loop:true;"
                     id="sun"
-                    material="src:docs/assets/sun.jpg"
+                    material="src:textures/sun.jpg"
                     position="0 0 0"
                     // color="#FFC65D"
                     radius="8">
