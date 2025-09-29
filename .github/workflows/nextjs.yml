@@ -7,7 +7,7 @@ name: Deploy Next.js site to Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["nextjs-refactor"]
+    branches: ["nextjs-refactor", "fix/planet_position_and_ar"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
