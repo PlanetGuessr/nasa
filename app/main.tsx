@@ -16,6 +16,7 @@ const Main = () => {
         // Handle VR entry + select placement
         scene.addEventListener("enter-vr", () => {
             const xrSession = scene.renderer?.xr?.getSession?.();
+            console.log("SESSION IS WORKING: ", xrSession);
             if (!xrSession) return;
 
             xrSession.addEventListener("select", () => {
@@ -66,7 +67,7 @@ const Main = () => {
             device-orientation-permission-ui="enabled: false"
             background="color: black"
             vr-mode-ui="enabled: true"
-            webxr="optionalFeatures: hit-test; requiredFeatures: local-floor;"
+            webxr="requiredFeatures: hit-test, local-floor;"
             renderer="colorManagement: true; physicallyCorrectLights: true"
         >
             <a-entity
@@ -88,7 +89,7 @@ const Main = () => {
                 radius-inner="0.05"
                 radius-outer="0.06"
                 rotation="-90 0 0"
-                visible="false"
+                visible="visible"
             ></a-ring>
         </a-scene>
     );
