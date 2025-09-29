@@ -16,7 +16,7 @@ const Main = () => {
             </div>
 
             {/* Camera */}
-            <a-entity camera position="0 1.6 0"></a-entity>
+            <a-entity camera look-controls></a-entity>
 
             {/*/!* Simple object *!/*/}
             {/*<a-box position="0 0 -2" color="red"></a-box>*/}
@@ -25,7 +25,10 @@ const Main = () => {
             <a id="myEnterARButton" href="#" style={{ color: "yellow" }}>
                 ENTER AR
             </a>
-            <SolarSystem />
+
+            <a-entity id="solar-system" position="0 0 -3" scale="0.05 0.05 0.05">
+                <SolarSystem />
+            </a-entity>
         </a-scene>
     );
 };
