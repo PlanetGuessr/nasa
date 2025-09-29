@@ -12,7 +12,6 @@ const Main = () => {
         >
             {/* Overlay container for DOM overlay in AR */}
             <div id="overlay" style={{ position: "absolute", top: 0, left: 0, color: "white" }}>
-                Overlay test
             </div>
 
             {/* Camera */}
