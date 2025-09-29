@@ -10,6 +10,10 @@ const Main = () => {
             renderer="alpha: true; colorManagement: true; physicallyCorrectLights: true"
             embedded
         >
+            <a-entity id="solar-system" position="0 0 -3" scale="0.05 0.05 0.05">
+                <SolarSystem />
+            </a-entity>
+
             {/* Overlay container for DOM overlay in AR */}
             <div id="overlay" style={{ position: "absolute", top: 0, left: 0, color: "white" }}>
             </div>
@@ -25,9 +29,6 @@ const Main = () => {
                 ENTER AR
             </a>
 
-            <a-entity id="solar-system" position="0 0 -3" scale="0.05 0.05 0.05">
-                <SolarSystem />
-            </a-entity>
         </a-scene>
     );
 };
