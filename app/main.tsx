@@ -57,7 +57,6 @@ const Main = () => {
             xr-mode-ui="enabled: true"
             webxr="optionalFeatures: hit-test; requiredFeatures: hit-test;"
             renderer="alpha: true; colorManagement: true; physicallyCorrectLights: true"
-            embedded
         >
             {/* Device-tracked camera */}
             <a-entity camera look-controls></a-entity>
@@ -74,7 +73,7 @@ const Main = () => {
                 radius-inner="0.05"
                 radius-outer="0.06"
                 rotation="-90 0 0"
-                visible="false"
+                visible="true"
             ></a-ring>
         </a-scene>
     );
