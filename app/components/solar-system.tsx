@@ -5,7 +5,8 @@ import Planet from "./planet";
 import hudContext from "../context/hud-context";
 
 const SolarSystem = () => {
-    const { hudOptions } = useContext(hudContext);
+
+	const { hudOptions, setHudOptions } = useContext(hudContext);
 
     useEffect(() => {
         console.log(hudOptions);
