@@ -26,43 +26,46 @@ const SolarSystem = () => {
 	return (
 		<>
 			<a-entity id="centro" position="0 0 -12">
+				{/* Sun sphere with only texture */}
 				<a-sphere
-					animation="property:rotation; dur:2160000000; easing:linear; to:0 360 0; loop:true;"
 					id="sun"
-					material="src:textures/sun.jpg"
+					radius="8"
+					material="src: textures/sun.jpg; shader: standard; emissive: #000000; emissiveIntensity: 0"
+					animation="property: rotation; dur: 2160000000; easing: linear; to: 0 360 0; loop: true"
+					shadow="cast: false; receive: false"
 					position="0 0 0"
-					// color="#FFC65D"
-					radius="8">
-				</a-sphere>
-				{/* Invisible sunlight */}
+				></a-sphere>
+
+				{/* Directional light (acts like parallel sunlight) */}
 				<a-entity
 					id="sun-light"
-					light="type: directional; intensity: 1.2; castShadow: true; shadowBias: -0.00005; shadowCameraNear: 0.1; shadowCameraFar: 5000; shadowMapWidth: 2048; shadowMapHeight: 2048"
+					light="type: directional; intensity: 1.0; castShadow: true; shadowBias: -0.0001;
+           shadowCameraNear: 0.1; shadowCameraFar: 5000; shadowMapWidth: 1024; shadowMapHeight: 1024"
 					position="0 0 0"
-					rotation="0 0 0"
+					rotation="0 -45 0"
 				></a-entity>
 
-                {/* Ambient fill light (soften shadows) */}
-                <a-entity
-                    light="type: ambient; intensity: 0.25; color: #555555"
-                ></a-entity>
+				{/* Ambient light to soften shadows */}
+				<a-entity
+					light="type: ambient; intensity: 0.35; color: #888888"
+				></a-entity>
 
-                {/* Planets */}
-                {planets.map((planet, index) => (
-                    <Planet
-                        key={index}
-                        id={planet.id}
-                        planetName={planet.planetName}
-                        sunDistance={planet.sunDistance}
-                        eccentricity={planet.eccentricity}
-                        rotation={planet.rotation}
-                        rot_speed={planet.rot_speed}
-                        speed={planet.speed}
-                        inclination={planet.inclination}
-                        size={planet.size}
-                    />
-                ))}
-            </a-entity>
+				{/* Planets */}
+				{planets.map((planet, index) => (
+					<Planet
+						key={index}
+						id={planet.id}
+						planetName={planet.planetName}
+						sunDistance={planet.sunDistance}
+						eccentricity={planet.eccentricity}
+						rotation={planet.rotation}
+						rot_speed={planet.rot_speed}
+						speed={planet.speed}
+						inclination={planet.inclination}
+						size={planet.size}
+					/>
+				))}
+			</a-entity>
         </>
     );
 }
