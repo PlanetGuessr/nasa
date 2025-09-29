@@ -17,7 +17,7 @@ const Main = () => {
 
             {/* Camera */}
             <a-entity camera position="0 1.6 0"></a-entity>
-            
+
             {/*/!* Simple object *!/*/}
             {/*<a-box position="0 0 -2" color="red"></a-box>*/}
 
