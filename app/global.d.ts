@@ -5,6 +5,7 @@ declare namespace JSX {
       'a-ring': any;
       'a-text': any;
       'a-sphere': any;
+      'a-box': any;
       'a-cylinder': any;
       'a-assets': any;
       'a-sky': any;

@@ -1,46 +1,33 @@
-"use client"
-import SolarSystem from "./components/solar-system";
-import 'aframe';
-import {useEffect} from "react";
+"use client";
+import "aframe";
+import SolarSystem from "@/app/components/solar-system";
 
 const Main = () => {
-    useEffect(() => {
-        const debugEl = document.getElementById("debugText");
-        const log = (msg: any) => {
-            console.log(msg);
-            if (debugEl) {
-                debugEl.setAttribute("text", msg);
-            }
-        };
-
-        const scene = document.querySelector("a-scene");
-        scene.addEventListener("enter-vr", () => {
-            log("XR session started");
-        });
-
-        scene.addEventListener("loaded", () => {
-            log("Scene loaded");
-        });
-    }, []);
-
     return (
         <a-scene
-            device-orientation-permission-ui="enabled: false"
-            webxr="requiredFeatures: hit-test local-floor; optionalFeatures: dom-overlay unbounded; overlayElement: #overlay;"
-
-            xr-mode-ui="enabled: true; enterAREnabled: true; enterARButton: #myEnterARButton;  XRMode: xr;"
-            renderer="alpha: true; colorManagement: true; antialias: true; foveationLevel: 1; physicallyCorrectLights: true"
+            xr-mode-ui="enabled: true; enterAREnabled: true; XRMode: xr;"
+            webxr="mode: ar; requiredFeatures: hit-test,local-floor; optionalFeatures: dom-overlay; overlayElement: #overlay;"
+            renderer="alpha: true; colorManagement: true; physicallyCorrectLights: true"
+            embedded
         >
-            <a-entity id="debugText"
-                      position="0 2 -2"
-                      text="value: Loading...; color: lime; width: 4">
-            </a-entity>
-            <a id="myEnterARButton" href="#">TOCAME AR PLS</a>
-            <a-entity camera look-controls wasd-controls="acceleration:250; fly:true" position="0 10 150">
-            </a-entity>
-            <SolarSystem/>
+            {/* Overlay container for DOM overlay in AR */}
+            <div id="overlay" style={{ position: "absolute", top: 0, left: 0, color: "white" }}>
+                Overlay test
+            </div>
+
+            {/* Camera */}
+            <a-entity camera position="0 1.6 0"></a-entity>
+            
+            {/*/!* Simple object *!/*/}
+            {/*<a-box position="0 0 -2" color="red"></a-box>*/}
+
+            {/* Custom AR button */}
+            <a id="myEnterARButton" href="#" style={{ color: "yellow" }}>
+                ENTER AR
+            </a>
+            <SolarSystem />
         </a-scene>
-    )
-}
+    );
+};
 
 export default Main;
