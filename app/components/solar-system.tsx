@@ -42,25 +42,29 @@ const SolarSystem = () => {
 					rotation="0 0 0"
 				></a-entity>
 
-				{/* Ambient fill light (soften shadows) */}
-				<a-entity
-					light="type: ambient; intensity: 0.5; color: #555555"
-				></a-entity>
-				{
-					planets.map((planet, index) => (
-						<Planet id={planet.id} planetName={planet.planetName} key={index}
-							sunDistance={planet.sunDistance}
-							eccentricity={planet.eccentricity}
-							rotation={planet.rotation}
-							rot_speed={planet.rot_speed}
-							speed={planet.speed}
-							inclination={planet.inclination}
-							size={planet.size} />
-					))
-				}
-			</a-entity>
-		</>
-	);
+                {/* Ambient fill light (soften shadows) */}
+                <a-entity
+                    light="type: ambient; intensity: 0.25; color: #555555"
+                ></a-entity>
+
+                {/* Planets */}
+                {planets.map((planet, index) => (
+                    <Planet
+                        key={index}
+                        id={planet.id}
+                        planetName={planet.planetName}
+                        sunDistance={planet.sunDistance}
+                        eccentricity={planet.eccentricity}
+                        rotation={planet.rotation}
+                        rot_speed={planet.rot_speed}
+                        speed={planet.speed}
+                        inclination={planet.inclination}
+                        size={planet.size}
+                    />
+                ))}
+            </a-entity>
+        </>
+    );
 }
 
 export default SolarSystem;
