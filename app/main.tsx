@@ -7,7 +7,6 @@ const Main = () => {
     return (
         <a-scene
             device-orientation-permission-ui="enabled: false"
-            vr-mode-ui="enabled: true"
             xr-mode-ui="enabled: true"
             webxr="mode:ar; optionalFeatures: hit-test; requiredFeatures: local-floor;"
             renderer="alpha: true; colorManagement: true; physicallyCorrectLights: true"
